@@ -1,0 +1,46 @@
+name: ✨ طلب ميزة جديدة
+description: اقترح ميزة جديدة
+title: "[FEATURE] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكراً لاقتراحك! يرجى وصف الميزة بوضوح.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: وصف الميزة
+      description: وصف تفصيلي للميزة المطلوبة
+      placeholder: |
+        أريد إضافة...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: الدافع
+      description: لماذا تحتاج هذه الميزة؟
+      placeholder: |
+        هذه الميزة ستساعد في...
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: مثال الاستخدام
+      description: كيف ستستخدم هذه الميزة؟
+      placeholder: |
+        المستخدم سيكون قادراً على...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: تأكيد
+      options:
+        - label: أنا مستعد للمساهمة في تطوير هذه الميزة
+          required: false

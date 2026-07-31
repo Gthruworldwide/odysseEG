@@ -1,0 +1,90 @@
+name: 🐛 تقرير خطأ
+description: أبلغ عن خطأ لمساعدتنا في تحسين التطبيق
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكراً لإبلاغك عن هذا الخطأ! يرجى ملء النموذج بعناية.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: تحقق من الآتي
+      description: تأكد من أنك لم تبلغ عن هذا الخطأ من قبل
+      options:
+        - label: بحثت في المشاكل السابقة ولم أجد نفس المشكلة
+          required: true
+        - label: هذا الخطأ يحدث في أحدث إصدار
+
+  - type: textarea
+    id: description
+    attributes:
+      label: وصف الخطأ
+      description: وصف واضح لما يحدث
+      placeholder: |
+        الصفحة الرئيسية لا تحمل بشكل صحيح
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: خطوات إعادة الإنتاج
+      description: كيفية إعادة الخطأ خطوة بخطوة
+      placeholder: |
+        1. افتح التطبيق
+        2. انقر على الزر الأحمر
+        3. سترى الخطأ
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: السلوك المتوقع
+      description: ماذا كان يجب أن يحدث؟
+      placeholder: |
+        يجب أن تحمل الصفحة بدون أخطاء
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: لقطات الشاشة
+      description: أضف لقطات شاشة إذا كان مفيداً
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: البيئة
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Docker
+        - أخرى
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment-details
+    attributes:
+      label: تفاصيل البيئة
+      description: |
+        نسخة Docker، نظام التشغيل، إلخ.
+      placeholder: |
+        - Docker: 20.10.21
+        - OS: Ubuntu 22.04
+        - Browser: Chrome 120.0
+        - Project Version: 2.0.0
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: السجلات ذات الصلة
+      description: إذا توفرت، أضف السجلات
+      render: bash
